@@ -43,13 +43,15 @@ Route::middleware(['auth', 'verified'])->group(function(){
 // Route::put('/note/{id}', [NoteController::class,'update'])->name('note.update');
 // Route::delete('/note/{id}', [NoteController::class,'destroy'])->name('note.destroy');
 
-Route::resource('note', NoteController::class);
+
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::resource('note', NoteController::class);
 });
 
 require __DIR__.'/auth.php';
