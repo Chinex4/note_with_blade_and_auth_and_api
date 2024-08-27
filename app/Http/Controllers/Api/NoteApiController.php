@@ -32,7 +32,7 @@ class NoteApiController extends Controller
             $createNote['image'] = $request->file('image')->store('images', 'public');
         }
         else{
-            $createNote['image'] = 'default-image.jpg';
+            $createNote['image'] = 'images/default-blog.jpg';
         }
         // $createNote['user_id'] = $request->user()->id;
         $createNote['user_id'] = 3;

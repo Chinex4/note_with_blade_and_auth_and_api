@@ -43,6 +43,9 @@
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
-        <a href="/auth/github/redirect" class=""><i class="bi bi-github me-2"></i>Login with GitHub</a>
+        <div class="flex flex-col gap-3 mt-4">
+            <a href="/auth/github/redirect" class="text-center py-3 rounded-md bg-gray-950 text-white"><i class="bi bi-github me-2"></i>Continue with GitHub</a>
+            <a href="{{route('google-auth')}}" class="text-center py-3 rounded-md bg-gray-950 text-white"><i class="bi bi-google me-2"></i>Continue with Google</a>
+        </div>
     </form>
 </x-guest-layout>

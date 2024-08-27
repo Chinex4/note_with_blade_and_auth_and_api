@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GoogleAuthController;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
@@ -27,6 +28,9 @@ Route::get('/auth/github/callback', function () {
 
     return redirect('/note');
 });
+Route::get('/auth/google/redirect', [GoogleAuthController::class, 'redirect'])->name('google-auth');
+
+Route::get('/auth/google/callback',[GoogleAuthController::class, 'callback']);
 
 Route::redirect('/', '/note')->name('dashboard');
 

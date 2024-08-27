@@ -45,7 +45,7 @@ class NoteController extends Controller
             $inputData['image'] = $request->file('image')->store('images', 'public');
         }
         else{
-            $inputData['image'] = 'default-image.jpg';
+            $inputData['image'] = 'images/default-blog.jpg';
         }
 
         // dd($request->user()->id);
